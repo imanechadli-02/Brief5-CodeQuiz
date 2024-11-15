@@ -1,0 +1,6 @@
+===============acceder a tout les types de question
+
+Questions.forEach(qst => {
+                        console.log( Questions[index].type)
+                        index++;
+                    });

@@ -1,0 +1,68 @@
+{
+    "quizzes": [
+      {
+        "name": "Mon premier quiz",
+        "questions": [
+          {
+            "question": "Quelle est la capitale de la France ?",
+            "type": "choix",
+            "options": ["Paris oooooooooooooooooooooooooooooooooooooooooooooooooooooo", "Londres", "Berlin", "Madrid"],
+            "correctAnswer": "Paris"
+          },
+          {
+            "question": "Quel est le plus grand océan ?",
+            "type": "trueFalse",
+            "correctAnswer": "Vrai"
+          },
+          {
+            "question": "Quelle est la couleur du ciel ?",
+            "type": "textuelle",
+            "correctAnswer": "Bleu"
+          }
+        ]
+      },
+      {
+        "name": "Mon premier quiz",
+        "questions": [
+          {
+            "question": "Quelle est la capitale de la France ?",
+            "type": "choix",
+            "options": ["Paris oooooooooooooooooooooooooooooooooooooooooooooooooooooo", "Londres", "Berlin", "Madrid"],
+            "correctAnswer": "Paris"
+          },
+          {
+            "question": "Quel est le plus grand océan ?",
+            "type": "trueFalse",
+            "correctAnswer": "Vrai"
+          },
+          {
+            "question": "Quelle est la couleur du ciel ?",
+            "type": "textuelle",
+            "correctAnswer": "Bleu"
+          }
+        ]
+      },
+      {
+        "name": "Mon premier quiz",
+        "questions": [
+          {
+            "question": "Quelle est la capitale de la France ?",
+            "type": "choix",
+            "options": ["Paris oooooooooooooooooooooooooooooooooooooooooooooooooooooo", "Londres", "Berlin", "Madrid"],
+            "correctAnswer": "Paris"
+          },
+          {
+            "question": "Quel est le plus grand océan ?",
+            "type": "trueFalse",
+            "correctAnswer": "Vrai"
+          },
+          {
+            "question": "Quelle est la couleur du ciel ?",
+            "type": "textuelle",
+            "correctAnswer": "Bleu"
+          }
+        ]
+      }
+    ]
+  }
+  

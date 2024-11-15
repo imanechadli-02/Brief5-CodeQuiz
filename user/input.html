@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Itim&family=La+Belle+Aurore&family=Molle&family=Righteous&display=swap');
+
+        body {
+            background-color: #A6FFBB;
+            display: flex;
+            flex-direction: column;
+
+
+        }
+
+        .partie1 {
+            display: flex;
+            justify-content: space-between;
+            margin: 10vw 10vw
+        }
+
+        .partie1 .nbrqst {
+            background-color: #1B3A6C;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            font-size: 52px;
+            font-family: "Itim", cursive;
+            font-weight: 400;
+            font-style: normal;
+            /* margin-left: 10vw; */
+
+        }
+
+        .partie1 .timer {
+            background-color: #1B3A6C;
+            width: 112px;
+            height: 60px;
+            border-radius: 20px;
+            color: white;
+            font-size: 52px;
+            font-family: "Itim", cursive;
+            font-weight: 400;
+            font-style: normal;
+
+        }
+
+        .apres {
+            display: flex;
+            flex-direction: column;
+            gap: 10vw;
+            align-items: center;
+
+        }
+
+        h3 {
+            /* margin-top: 15vw; */
+            color: black;
+            font-family: "Itim", cursive;
+            font-weight: 400;
+            font-style: normal;
+            /* margin-left: 18vw; */
+            font-size: 9vw;
+
+        }
+
+        .question {
+            background-color: #1CC071;
+            /* margin: 10vw 10vw; */
+            width: 80vw;
+            height: 20vw;
+            border-radius: 20px;
+        }
+
+        .reponse input {
+            width: 50vw;
+            font-size: 3vw;
+            /* margin-left: 24vw; */
+            height: 10vw;
+            border-radius: 7px;
+            background-color: #D9D9D9;
+            font-family: "Itim", cursive;
+            font-weight: 400;
+            font-style: normal;
+            color: black;
+            border: transparent;
+        }
+
+
+
+        #btn {
+            width: 20vw;
+            background-color: #084538;
+            color: white;
+            font-family: "Itim", cursive;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 30px;
+            border-radius: 12px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+
+    <div class="partie1">
+        <div class="nbrqst">09</div>
+        <div class="timer">1.09</div>
+    </div>
+    <div class="apres">
+        <h3>Quiz name</h3>
+        <div class="question">QST</div>
+        <div class="reponse">
+            <input type="text" placeholder="Entrer votre reponse">
+        </div>
+
+        <button id="btn">Submit</button>
+    </div>
+
+</body>
+
+</html>
