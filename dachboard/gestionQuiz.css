@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Itim&family=La+Belle+Aurore&family=Molle&family=Righteous&display=swap');
+
+body {
+    background-color: #01E5B4;
+}
+
+h1 {
+    margin-top: 15vw;
+    color: black;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 10vw;
+    font-size: 9vw;
+}
+
+#ajout {
+    width: 19vw;
+    margin-left: 66vw;
+    margin-bottom: 5vw;
+    border-radius: 7px;
+    background-color: #084538;
+    height: 6vw;
+    color: white;
+    font-family: "Holtwood One SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards .card1 {
+    background-color: #A6FFBB;
+    border-radius: 20px;
+    width: 90vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cards .card1 .parag {
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 10px;
+}
+
+.cards .card1 .parag #btn {
+    width: 20vw;
+    background-color: #084538;
+    color: white;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    border-radius: 12px;
+}
+
+.cards .card1 img {
+    height: 12vw;
+    width: 12vw;
+    margin-top: 2vw;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 7vw;
+        margin-left: 5vw;
+    }
+
+    #ajout {
+        width: 25vw;
+        margin-left: 60vw;
+        height: 8vw;
+        font-size: 1rem;
+    }
+
+    .cards .card1 {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .cards .card1 .parag {
+        text-align: center;
+    }
+
+    .cards .card1 img {
+        height: 15vw;
+        width: 15vw;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 6vw;
+        margin-left: 5vw;
+        margin-top: 10vw;
+    }
+
+    #ajout {
+        width: 35vw;
+        margin-left: 55vw;
+        height: 10vw;
+        font-size: 0.9rem;
+    }
+
+    .cards .card1 {
+        width: 95vw;
+    }
+
+    .cards .card1 img {
+        height: 20vw;
+        width: 20vw;
+    }
+
+    .cards .card1 .parag #btn {
+        width: 30vw;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 5vw;
+        margin-left: 3vw;
+        margin-top: 8vw;
+    }
+
+    #ajout {
+        width: 50vw;
+        margin-left: 45vw;
+        height: 12vw;
+        font-size: 0.8rem;
+    }
+
+    .cards .card1 {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .cards .card1 img {
+        height: 25vw;
+        width: 25vw;
+    }
+
+    .cards .card1 .parag #btn {
+        width: 40vw;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Itim&family=La+Belle+Aurore&family=Molle&family=Righteous&display=swap');
+
+body {
+    background-color: #01E5B4;
+}
+
+h1 {
+    margin-top: 15vw;
+    color: white;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 10vw;
+    font-size: 9vw;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards .card1 {
+    background-color: #A6FFBB;
+    border-radius: 20px;
+    width: 90vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.cards .card1 .parag {
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.cards .card1 .parag #btn {
+    width: 20vw;
+    background-color: #084538;
+    color: white;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    border-radius: 12px;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.cards .card1 img {
+    height: 12vw;
+    width: 12vw;
+    margin-top: 2vw;
+    border-radius: 10px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1 {
+        margin-top: 10vw;
+        font-size: 7vw;
+        margin-left: 5vw;
+        text-align: center;
+    }
+
+    .cards .card1 {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .cards .card1 .parag #btn {
+        width: 40vw;
+        font-size: 20px;
+    }
+
+    .cards .card1 img {
+        height: 20vw;
+        width: 20vw;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        margin-top: 10vw;
+        font-size: 6vw;
+        margin-left: 2vw;
+        text-align: center;
+    }
+
+    .cards .card1 {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .cards .card1 .parag #btn {
+        width: 60vw;
+        font-size: 16px;
+    }
+
+    .cards .card1 img {
+        height: 30vw;
+        width: 30vw;
+    }
+}

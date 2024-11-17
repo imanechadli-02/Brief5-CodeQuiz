@@ -1,0 +1,135 @@
+body {
+    background-color: #A6FFBB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vw;
+}
+
+h1,
+div {
+    color: black;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4vw;
+}
+
+.score {
+    background-color: #01E5B4;
+    width: 26vw;
+    height: 26vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score div {
+    color: white;
+    font-size: 10vw;
+}
+
+#btn {
+    width: 20vw;
+    background-color: #084538;
+    color: white;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-size: 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+}
+
+.revision {
+    font-size: 3vw;
+    text-align: center;
+    color: black;
+}
+
+.correct-answer {
+    color: #4CAF50;
+}
+
+.incorrect-answer {
+    color: #F44336;
+}
+
+.question {
+    font-size: 2vw;
+    margin-top: 2vw;
+}
+
+.answer {
+    font-size: 2vw;
+    margin: 1vw 0;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1,
+    div {
+        font-size: 5vw;
+    }
+
+    .score {
+        width: 35vw;
+        height: 35vw;
+    }
+
+    .score div {
+        font-size: 12vw;
+    }
+
+    #btn {
+        width: 30vw;
+        font-size: 20px;
+    }
+
+    .revision {
+        font-size: 4vw;
+    }
+
+    .question {
+        font-size: 3vw;
+    }
+
+    .answer {
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 480px) {
+    h1,
+    div {
+        font-size: 6vw;
+    }
+
+    .score {
+        width: 50vw;
+        height: 50vw;
+    }
+
+    .score div {
+        font-size: 15vw;
+    }
+
+    #btn {
+        width: 50vw;
+        font-size: 18px;
+    }
+
+    .revision {
+        font-size: 5vw;
+    }
+
+    .question {
+        font-size: 4vw;
+    }
+
+    .answer {
+        font-size: 4vw;
+    }
+}

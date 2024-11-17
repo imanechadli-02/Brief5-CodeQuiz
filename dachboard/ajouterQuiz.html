@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ajouterQuiz.css">
+</head>
+
+<body>
+
+    <!DOCTYPE html>
+    <html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ajouter un Quiz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Ajouter un Quiz</h1>
+
+            <!-- Formulaire pour ajouter les informations générales du quiz -->
+            <form id="quiz-form">
+                <label for="title">Titre du Quiz :</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="description">Description :</label>
+                <textarea id="description" name="description" required></textarea>
+
+                <label for="category">Catégorie :</label>
+                <input type="text" id="category" name="category" required>
+
+                <label for="difficulty">Difficulté :</label>
+                <select id="difficulty" name="difficulty" required>
+                    <option value="easy">Facile</option>
+                    <option value="medium">Moyenne</option>
+                    <option value="hard">Difficile</option>
+                </select>
+
+                <label for="time">Temps par question (en secondes) :</label>
+                <input type="number" id="time" name="time" required>
+
+                <label for="points">Points par question :</label>
+                <input type="number" id="points" name="points" required>
+
+                <button type="submit">Enregistrer le Quiz</button>
+            </form>
+
+            <h2>Ajouter des Questions</h2>
+            <form id="questions-form" style="display:none;">
+                <div id="questions-container"></div>
+                <button type="submit">Enregistrer les Questions</button>
+            </form>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+
+    </html>
+
+    <script>
+        // Formulaire d'ajout du quiz
+        document.getElementById('quiz-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Récupérer les informations générales du quiz
+            const title = document.getElementById('title').value;
+            const description = document.getElementById('description').value;
+            const category = document.getElementById('category').value;
+            const difficulty = document.getElementById('difficulty').value;
+            const time = document.getElementById('time').value;
+            const points = document.getElementById('points').value;
+
+            // Créer un objet quiz
+            const quiz = {
+                title,
+                description,
+                category,
+                difficulty,
+                time,
+                points,
+                questions: [] // Les questions seront ajoutées plus tard
+            };
+
+            // Enregistrer le quiz dans le localStorage
+            let quizzes = JSON.parse(localStorage.getItem('quizzes')) || [];
+            quizzes.push(quiz);
+            localStorage.setItem('quizzes', JSON.stringify(quizzes));
+
+            // Réinitialiser le formulaire
+            document.getElementById('quiz-form').reset();
+
+            // Masquer le formulaire d'ajout du quiz et afficher celui des questions
+            document.getElementById('quiz-form').style.display = 'none';
+            document.getElementById('questions-form').style.display = 'block';
+
+            // Afficher les champs pour ajouter les questions
+            addQuestionFields();
+        });
+
+        // Ajouter des champs de question dynamiquement
+        let questionCount = 0;
+        function addQuestionFields() {
+            const container = document.getElementById('questions-container');
+
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('question');
+            questionDiv.innerHTML = `
+        <h3>Question ${questionCount + 1}</h3>
+        <label for="question-text-${questionCount}">Texte de la question :</label>
+        <input type="text" id="question-text-${questionCount}" name="question-text-${questionCount}" required>
+
+        <label for="answer-${questionCount}">Réponse correcte :</label>
+        <input type="text" id="answer-${questionCount}" name="answer-${questionCount}" required>
+
+        <button type="button" onclick="removeQuestionField(${questionCount})">Supprimer la question</button>
+    `;
+
+            container.appendChild(questionDiv);
+            questionCount++;
+        }
+
+        // Supprimer une question
+        function removeQuestionField(index) {
+            const container = document.getElementById('questions-container');
+            const questionDiv = document.querySelectorAll('.question')[index];
+            container.removeChild(questionDiv);
+        }
+
+        // Formulaire pour enregistrer les questions
+        document.getElementById('questions-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const quizzes = JSON.parse(localStorage.getItem('quizzes'));
+            const lastQuiz = quizzes[quizzes.length - 1];
+
+            for (let i = 0; i < questionCount; i++) {
+                const questionText = document.getElementById(`question-text-${i}`).value;
+                const correctAnswer = document.getElementById(`answer-${i}`).value;
+
+                const question = {
+                    questionText,
+                    correctAnswer
+                };
+
+                lastQuiz.questions.push(question);
+            }
+
+            // Mettre à jour le quiz dans le localStorage avec les questions
+            localStorage.setItem('quizzes', JSON.stringify(quizzes));
+
+            alert('Questions ajoutées avec succès!');
+
+            // Réinitialiser et revenir au formulaire d'ajout de quiz
+            document.getElementById('questions-form').reset();
+            document.getElementById('questions-form').style.display = 'none';
+            document.getElementById('quiz-form').style.display = 'block';
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+body {
+    background-color: #A6FFBB;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.partie1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 10vw 10vw;
+}
+
+.partie1 .nbrqst,
+.partie1 .score,
+.partie1 .timer {
+    background-color: #1B3A6C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    color: white;
+}
+
+.partie1 .nbrqst {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.partie1 .score,
+.partie1 .timer {
+    width: 150px;
+    height: 60px;
+    border-radius: 20px;
+}
+
+.progress-container {
+    width: 80%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #1CC071;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.apres .laQuestion {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.laQuestion h3 {
+    color: black;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+}
+
+.laQuestion .question {
+    background-color: #1CC071;
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.btn-next,
+.btn-submit {
+    width: 20vw;
+    background-color: #1B3A6C;
+    color: white;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 10px;
+    display: none;
+}
+
+.reponse {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.repo {
+    background-color: #01E5B4;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.repo.selected {
+    background-color: #FFD700;
+    color: black;
+}
+
+.correct {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.incorrect {
+    background-color: #F44336;
+    color: white;
+}
+
+.correct-answer {
+    background-color: #4CAF50;
+    color: white;
+}
+
+input {
+    width: 50%;
+    padding: 10px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .partie1 {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .partie1 .nbrqst,
+    .partie1 .score,
+    .partie1 .timer {
+        width: 80px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .laQuestion .question {
+        width: 90%;
+        font-size: 1.3rem;
+    }
+
+    .btn-next,
+    .btn-submit {
+        width: 50%;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .partie1 .nbrqst,
+    .partie1 .score,
+    .partie1 .timer {
+        width: 99px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .progress-container {
+        width: 90%;
+    }
+
+    .laQuestion .question {
+        font-size: 1.2rem;
+    }
+
+    .btn-next,
+    .btn-submit {
+        width: 70%;
+        font-size: 0.9rem;
+    }
+
+    input {
+        width: 90%;
+    }
+}

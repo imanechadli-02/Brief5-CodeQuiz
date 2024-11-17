@@ -5,70 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=La+Belle+Aurore&family=Molle&family=Righteous&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Itim&family=La+Belle+Aurore&family=Molle&family=Righteous&display=swap');
-
-        body {
-            background-image: url(images/modern-question-mark-pattern-background-help-support_1017-50408.jpg);
-        }
-
-        .second {
-            display: flex;
-            flex-direction: column;
-            gap: 5vw;
-            /* text-align: center; */
-        }
-
-        .second #admin {
-            background-color: #1B3A6C;
-            color: white;
-            font-size: 2vw;
-            font-family: "Holtwood One SC", serif;
-            font-weight: 400;
-            font-style: normal;
-            float: right;
-            border-radius: 10px;
-            height: 5vw;
-            width: 10vw;
-        }
-
-        .second .title {
-            color: aliceblue;
-            font-family: "Itim", cursive;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 16vw;
-            margin-left: 17vw;
-        }
-
-        .second input {
-            width: 50vw;
-            /* display: inline-block; */
-            margin-left: 24vw;
-            height: 6vw;
-            border-radius: 7px;
-            background-color: #D9D9D9;
-            font-family: "Itim", cursive;
-            font-weight: 400;
-            font-style: normal;
-            color: black;
-            border: transparent;
-            font-size: 4vw;
-        }
-
-        .second #play {
-            width: 27vw;
-            margin-left: 35vw;
-            border-radius: 7px;
-            background-color: #084538;
-            height: 6vw;
-            color: white;
-            font-family: "Holtwood One SC", serif;
-            font-weight: 400;
-            font-style: normal;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -76,10 +13,10 @@
 
     </header>
     <div class="second">
-        <button id="admin">Admin</button>
+        <button id="admin" onclick="goToAdminPage()">Admin</button>
         <h1 class="title">QUIZARD</h1>
         <input id="input" type="text" placeholder="Entrer votre nom">
-        <button id="play" onclick="choises('user/quizchoice.html')">Play Now</button>
+        <button id="play" onclick="choises('user/choixQuiz.html')">Play Now</button>
     </div>
 
 
@@ -97,7 +34,9 @@
             console.log(localStorage.getItem("nomUtilisateur"))
 
         }
-
+        function goToAdminPage() {
+            window.location.href = "dachboard/gestionQuiz.html"; // Remplacez "gestionQuiz.html" par le chemin de votre page de gestion des quiz
+        }
 
         // console.log(localStorage.getItem("nomUtilisateur"))
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajouter des Questions</title>
+</head>
+<body>
+  <h1>Ajouter des Questions au Quiz</h1>
+  <form id="questionsForm"></form>
+
+  <button id="submitQuestions">Enregistrer les Questions</button>
+
+  <script>
+    const quiz = JSON.parse(localStorage.getItem('quiz'));
+    const questionsForm = document.getElementById('questionsForm');
+
+    // Créer des formulaires de questions en fonction du nombre de questions spécifié
+    for (let i = 1; i <= quiz.numberOfQuestions; i++) {
+      const questionDiv = document.createElement('div');
+      questionDiv.innerHTML = `
+        <h3>Question ${i}</h3>
+        <label for="question${i}">Question :</label>
+        <input type="text" id="question${i}" required><br><br>
+
+        <label for="answer${i}">Réponse :</label>
+        <input type="text" id="answer${i}" required><br><br>
+      `;
+      questionsForm.appendChild(questionDiv);
+    }
+
+    // Ajouter les questions au quiz et enregistrer dans le localStorage
+    document.getElementById('submitQuestions').addEventListener('click', function() {
+      const questions = [];
+      for (let i = 1; i <= quiz.numberOfQuestions; i++) {
+        const question = document.getElementById(`question${i}`).value;
+        const answer = document.getElementById(`answer${i}`).value;
+        questions.push({ question, answer });
+      }
+
+      // Mettre à jour les questions du quiz dans le localStorage
+      quiz.questions = questions;
+      localStorage.setItem('quiz', JSON.stringify(quiz));
+
+      alert('Questions enregistrées avec succès');
+    });
+  </script>
+</body>
+</html>

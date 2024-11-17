@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=La+Belle+Aurore&family=Molle&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Itim&family=La+Belle+Aurore&family=Molle&family=Righteous&display=swap');
+
+body {
+    background-image: url(images/modern-question-mark-pattern-background-help-support_1017-50408.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.second {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+}
+
+.second #admin {
+    background-color: #1B3A6C;
+    color: white;
+    font-size: 2vw;
+    font-family: "Holtwood One SC", serif;
+    font-weight: 400;
+    border-radius: 10px;
+    height: 5vw;
+    width: 10vw;
+    text-align: center;
+    line-height: 5vw;
+    cursor: pointer;
+}
+
+.second .title {
+    color: aliceblue;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-size: 16vw;
+    margin-left: 17vw;
+    text-align: center;
+}
+
+.second input {
+    width: 50vw;
+    margin: 0 auto;
+    height: 6vw;
+    border-radius: 7px;
+    background-color: #D9D9D9;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    color: black;
+    border: transparent;
+    font-size: 4vw;
+    text-align: center;
+}
+
+.second #play {
+    width: 27vw;
+    margin: 0 auto;
+    border-radius: 7px;
+    background-color: #084538;
+    height: 6vw;
+    color: white;
+    font-family: "Holtwood One SC", serif;
+    font-weight: 400;
+    text-align: center;
+    line-height: 6vw;
+    cursor: pointer;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .second #admin {
+        font-size: 3vw;
+        height: 6vw;
+        width: 20vw;
+        line-height: 6vw;
+    }
+
+    .second .title {
+        font-size: 10vw;
+        margin-left: 0;
+    }
+
+    .second input {
+        width: 70vw;
+        font-size: 3.5vw;
+        height: 8vw;
+    }
+
+    .second #play {
+        width: 50vw;
+        font-size: 4vw;
+        height: 8vw;
+        line-height: 8vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .second #admin {
+        font-size: 4vw;
+        height: 8vw;
+        width: 30vw;
+        line-height: 8vw;
+    }
+
+    .second .title {
+        font-size: 12vw;
+    }
+
+    .second input {
+        width: 80vw;
+        font-size: 4vw;
+        height: 10vw;
+    }
+
+    .second #play {
+        width: 70vw;
+        font-size: 4.5vw;
+        height: 10vw;
+        line-height: 10vw;
+    }
+}

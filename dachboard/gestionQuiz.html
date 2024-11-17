@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="choixQuiz.css"> -->
+    <link rel="stylesheet" href="gestionQuiz.css">
+</head>
+
+<body>
+    <h1>Liste des quizzes</h1>
+    <button id="ajout" onclick=" window.location.href = 'ajouterQuiz.html'" >ajouter un quiz</button>
+    <div class="cards" id="cards-container"></div>
+
+    <!-- <script src="choixQuiz.js"></script> -->
+    <script>
+        fetch('../user/quizes.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data); // Check the fetched quiz data
+
+                const quizContainer = document.getElementById("cards-container");
+
+                data.quizzes.forEach(quiz => {
+                    const card = document.createElement("div");
+                    card.classList.add('card1');
+                    card.innerHTML = `
+                        <div class="parag">
+                            <h3>${quiz.name}</h3>
+                            <h3>Level: ${quiz.level}</h3>
+                            <h3>Nombre de questions: ${quiz.questions.length}</h3>
+                            <h3>Participation: ${quiz.participation} personnes</h3>
+                        </div>
+                        <img src="../images/histoiresvg.svg" alt="">`;
+
+                    quizContainer.appendChild(card);
+                });
+            });
+
+       
+    </script>
+</body>
+
+</html>
